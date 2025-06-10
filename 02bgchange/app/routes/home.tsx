@@ -10,7 +10,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-      <h1 className="bg-blend-exclusion text-orange-700">hello</h1>
+      <h1 className="bg-blend-exclusion text-orange-700">welcome</h1>
     </>
   );
 }
