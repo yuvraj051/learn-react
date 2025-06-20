@@ -4,8 +4,7 @@ import "./index.css";
 
 import About_us from "./Components/about-us";
 import Header from "./Components/Header";
-import Home from "./Components/Home";
-
+import Home, { loader_method } from "./Components/Home";
 function App() {
   const router = createBrowserRouter([
     {
@@ -16,10 +15,7 @@ function App() {
         {
           path: "",
           element: <Home />,
-          loader: () => {
-            console.log("home");
-            return { name: "yuvrajseet" };
-          },
+          loader: loader_method,
         },
         {
           path: "about_us",

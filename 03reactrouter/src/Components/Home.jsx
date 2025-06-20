@@ -9,3 +9,7 @@ export default function Home() {
     </>
   );
 }
+export const loader_method = () => {
+  console.log("home");
+  return { name: "yuvraj" };
+};
