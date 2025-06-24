@@ -8,7 +8,7 @@ function Profile() {
   return (
     <>
       welcome {user.username}
-      <input type="button" onClick={() => Navigate("/other")} />
+      <input type="button" onClick={() => Navigate("/other")} value="go to" />
     </>
   );
 }
