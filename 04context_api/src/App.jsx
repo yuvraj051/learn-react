@@ -11,7 +11,6 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <UserContextProvider>
-        {" "}
         <Login />
       </UserContextProvider>
     ),
@@ -19,10 +18,12 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: (
-      <UserContextProvider>
-        {" "}
-        <Profile />
-      </UserContextProvider>
+      <>
+        <UserContextProvider>
+          <Profile />
+          <Login />
+        </UserContextProvider>
+      </>
     ),
   },
   {
