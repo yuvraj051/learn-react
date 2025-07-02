@@ -12,8 +12,10 @@ export default function Header() {
   return (
     <>
       <nav className="flex justify-between m-6">
-        <h1>header</h1>
-        <div>
+        <h1 className="dark:bg-black w-[70vw] bg-white text-black  dark:text-white p-4 rounded">
+          project 04 them-changer
+        </h1>
+        <div className="bg-white dark:bg-black dark:text-white  text-black p-4 rounded">
           <input
             type="checkbox"
             name="them"
