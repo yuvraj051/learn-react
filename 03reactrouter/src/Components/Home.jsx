@@ -7,8 +7,8 @@ export default function Home() {
     <>
       <div>welcome {user.name}</div>
       <div className="w-[100vw]  flex justify-center">
-        <h1 className="absolute top-40 text-4xl ">yuvi</h1>
-        <img src="public/me.jpg" className="h-100 w-100 rounded-full " alt="" />
+        {/* <h1 className="absolute top-40 text-4xl ">yuvi</h1> */}
+        {/* <img src="public/me.jpg" className="h-100 w-100 rounded-full " alt="" /> */}
       </div>
     </>
   );

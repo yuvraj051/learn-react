@@ -5,40 +5,31 @@ import Login from "./Components/Login";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Profile from "./Components/Profile";
 import NoPermissionComponent from "./Components/noPermissionComponent";
+import Header from "./Components/Header";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <UserContextProvider>
-        <Login />
-      </UserContextProvider>
-    ),
-  },
-  {
-    path: "/profile",
-    element: (
-      <>
-        <UserContextProvider>
-          <Profile />
-          <Login />
-        </UserContextProvider>
-      </>
-    ),
-  },
-  {
-    path: "/other",
-    element: (
-      // <UserContextProvider>
-      <NoPermissionComponent />
-      // </UserContextProvider>
-    ),
+    element: <Header />,
+
+    children: [
+      {
+        path: "",
+        element: <Login />,
+      },
+      {
+        path: "about_us",
+        element: <Profile />,
+        loader: () => {
+          console.log("profiles");
+          return null;
+        },
+      },
+    ],
   },
 ]);
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <RouterProvider router={router} />
@@ -49,3 +40,34 @@ function App() {
 }
 
 export default App;
+
+//
+
+//  children: [
+//       {
+//         path: "",
+//         element: <Login />,
+//         // <UserContextProvider>
+//         // <Login />
+//         // </UserContextProvider>
+//       },
+//       {
+//         path: "profile",
+//         element: (
+//           <>
+//             <UserContextProvider>
+//               <Profile />
+//               <Login />
+//             </UserContextProvider>
+//           </>
+//         ),
+//       },
+//       {
+//         path: "other",
+//         element: (
+//           // <UserContextProvider>
+//           <NoPermissionComponent />
+//           // </UserContextProvider>
+//         ),
+//       },
+//     ],
