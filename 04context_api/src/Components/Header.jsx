@@ -11,22 +11,25 @@ export default function Header() {
 
   return (
     <>
-      <nav>
+      <nav className="flex justify-between m-6">
         <h1>header</h1>
-        <input
-          type="checkbox"
-          name="them"
-          onChange={() => {
-            if (them === "dark") {
-              setthem("light");
-            } else {
-              setthem("dark");
-            }
-          }}
-          id=""
-          placeholder="them"
-        />
-        dark
+        <div>
+          <input
+            type="checkbox"
+            name="them"
+            checked={them === "dark"}
+            onChange={() => {
+              if (them === "dark") {
+                setthem("light");
+              } else {
+                setthem("dark");
+              }
+            }}
+            id=""
+            placeholder="them"
+          />
+          dark
+        </div>
       </nav>
 
       <main>

@@ -10,7 +10,7 @@ export default function Login() {
     Navigate("/profile");
   };
   return (
-    <>
+    <div className="m-6">
       {"  "}
       <input
         type="text"
@@ -27,6 +27,6 @@ export default function Login() {
       />
       {"  "}
       <input type="button" value="login" onClick={handle_login} />
-    </>
+    </div>
   );
 }

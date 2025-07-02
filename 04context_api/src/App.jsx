@@ -6,6 +6,7 @@ import Profile from "./Components/Profile";
 import Header from "./Components/Header";
 import ThemContextProvider from "./Context/ThemContextProvider";
 import NoPermissionComponent from "./Components/NoPermissionComponent";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
           <>
             <UserContextProvider>
               <Profile />
-              <Login />
+              {/* <Login /> */}
             </UserContextProvider>
           </>
         ),
