@@ -5,7 +5,7 @@ function NoPermissionComponent() {
   const { user } = useContext(UserContext);
   return (
     <>
-      <h1>hello {user.username}</h1>
+      <h1 className="bg-black">hello {user.username}</h1>
     </>
   );
 }

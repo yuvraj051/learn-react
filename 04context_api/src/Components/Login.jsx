@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../Context/UserContextProvider";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+export default function Login() {
   const Navigate = useNavigate();
   const { user, setuser } = useContext(UserContext);
 
@@ -30,5 +30,3 @@ function Login() {
     </>
   );
 }
-
-export default Login;

@@ -1,29 +1,49 @@
-import { useState } from "react";
-import "./App.css";
+import React, { useState } from "react";
 import UserContextProvider from "./Context/UserContextProvider";
 import Login from "./Components/Login";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Profile from "./Components/Profile";
-import NoPermissionComponent from "./Components/noPermissionComponent";
 import Header from "./Components/Header";
+import ThemContextProvider from "./Context/ThemContextProvider";
+import NoPermissionComponent from "./Components/NoPermissionComponent";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Header />,
+    element: (
+      <ThemContextProvider>
+        <Header />
+      </ThemContextProvider>
+    ),
 
     children: [
       {
         path: "",
-        element: <Login />,
+        element: (
+          // <Login />,
+          <UserContextProvider>
+            <Login />
+          </UserContextProvider>
+        ),
       },
       {
-        path: "about_us",
-        element: <Profile />,
-        loader: () => {
-          console.log("profiles");
-          return null;
-        },
+        path: "profile",
+        element: (
+          <>
+            <UserContextProvider>
+              <Profile />
+              <Login />
+            </UserContextProvider>
+          </>
+        ),
+      },
+      {
+        path: "other",
+        element: (
+          // <UserContextProvider>
+          <NoPermissionComponent />
+          // </UserContextProvider>
+        ),
       },
     ],
   },
